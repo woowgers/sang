@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=0.0.2
+Name=Sang
+GenericName=UEFI Boot Manager
+Comment=Modify UEFI boot configuration without rebooting to firmware
+Exec=sang %U
+Icon=sang
+Terminal=false
+Categories=System;Settings;HardwareSettings;
+Keywords=uefi;boot;efibootmgr;bootloader;firmware;
+StartupNotify=true
+StartupWMClass=sang
