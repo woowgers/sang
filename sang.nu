@@ -1,5 +1,3 @@
-#!/usr/bin/env nu
-
 def os_name []: nothing -> string {
   return $nu.os-info.name
 }
@@ -105,6 +103,17 @@ def list_boot_entries []: nothing -> table {
 }
 
 
+def zenity_select [
+  ...args
+] {
+  let os = os_name
+  match $os {
+    "linux" => { zenity --list --title "Select Next Boot" --column=Name ...$args }
+    "windows" => { zenity --list --title "Select Next Boot" ...$args }
+  }
+}
+
+
 def main [] {
     let entries = list_boot_entries
 
@@ -121,7 +130,7 @@ def main [] {
     let zenity_args = ($display_entries | get name)
 
     let selected = (
-        zenity --list --title="Select Next Boot" ...$zenity_args
+        zenity_select ...$zenity_args
         | complete
     )
 
