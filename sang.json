@@ -1,0 +1,25 @@
+
+{
+	"version": "0.0.5",
+	"description": "Sang is not GRUB",
+	"url": "https://github.com/woowgers/sang/archive/refs/tags/0.0.5.zip",
+	"homepage": "https://github.com/woowgers/sang",
+	"license": "WTFPL",
+	"extract_dir": "sang-0.0.5",
+	"hash": "bfd25f2f6cd6b7dd7ab53dba98a598258b20f33a351d3e8e2d23986249758c7f",
+	"shortcuts": [
+		[
+			"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+			"Sang",
+			"-WindowStyle Hidden -Command \"nu $dir\\sang.nu\"",
+			"icons\\sang-boot-512.ico"
+		]
+	],
+	"depends": [
+		"jq",
+		"jc",
+		"nu",
+		"gsudo",
+		"https://ncruces.github.io/scoop/zenity.json"
+	]
+}
