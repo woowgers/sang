@@ -1,11 +1,11 @@
 
 {
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Sang is not GRUB",
-	"url": "https://github.com/woowgers/sang/archive/refs/tags/0.0.5.zip",
+	"url": "https://github.com/woowgers/sang/archive/refs/tags/0.0.6.zip",
 	"homepage": "https://github.com/woowgers/sang",
 	"license": "WTFPL",
-	"extract_dir": "sang-0.0.5",
+	"extract_dir": "sang-0.0.6",
 	"hash": "bfd25f2f6cd6b7dd7ab53dba98a598258b20f33a351d3e8e2d23986249758c7f",
 	"shortcuts": [
 		[
@@ -21,5 +21,17 @@
 		"nu",
 		"gsudo",
 		"https://ncruces.github.io/scoop/zenity.json"
+	],
+	"post_install": [
+	    "$jcParserDir = \"$env:LOCALAPPDATA\\jc\\jc\\jcparsers\"",
+	    "if (-not (Test-Path $jcParserDir)) { New-Item -ItemType Directory -Force -Path $jcParserDir | Out-Null }",
+	    "Copy-Item -Path \"$dir\\misc\\bcdedit.py\" -Destination \"$jcParserDir\\bcdedit.py\" -Force",
+	    "Write-Host \"Installed jc parser to $jcParserDir\\bcdedit.py\" -ForegroundColor Green"
+	],
+	"pre_uninstall": [
+	    "$jcParserFile = \"$env:LOCALAPPDATA\\jc\\jc\\jcparsers\\bcdedit.py\"",
+	    "if (Test-Path $jcParserFile) { Remove-Item $jcParserFile -Force }",
+	    "$cacheDir = \"$env:LOCALAPPDATA\\jc\\jc\\jcparsers\\__pycache__\"",
+	    "if (Test-Path $cacheDir) { Remove-Item $cacheDir -Recurse -Force }"
 	]
 }
