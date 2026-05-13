@@ -6,7 +6,7 @@
 	"homepage": "https://github.com/woowgers/sang",
 	"license": "WTFPL",
 	"extract_dir": "sang-0.0.6",
-	"hash": "061d33b37697c7d268229324273f5387877775c32052a52856f86bf6970a916b",
+	"hash": "3c57d2dc981682c57739a563721da12bc301c5edba4de8440add1b9ce215692c",
 	"shortcuts": [
 		[
 			"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
